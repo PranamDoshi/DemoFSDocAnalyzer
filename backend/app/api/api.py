@@ -1,8 +1,12 @@
 from fastapi import APIRouter
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 from app.api.endpoints import conversation, health, documents
 
 api_router = APIRouter()
+
 api_router.include_router(
     conversation.router, prefix="/conversation", tags=["conversation"]
 )

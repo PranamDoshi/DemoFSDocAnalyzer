@@ -76,3 +76,5 @@ We also have a dedicated [#sec-insights channel on our Discord](https://discord.
 We remain very open to contributions! We're looking forward to seeing the ideas and improvements the LlamaIndex community is able to provide.
 
 Huge shoutout to [**@Evanc123**](https://github.com/Evanc123) for his fantastic work building the frontend for this project!
+
+To start Chrome in Cors disabled mode!

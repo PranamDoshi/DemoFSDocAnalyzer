@@ -125,6 +125,7 @@ class DocumentMetadataKeysEnum(str, Enum):
     """
 
     SEC_DOCUMENT = "sec_document"
+    BSE_DOCUMENT = "bse_document"
 
 
 class SecDocumentTypeEnum(str, Enum):
@@ -151,6 +152,16 @@ class SecDocumentMetadata(BaseModel):
     period_of_report_date: Optional[datetime]
     filed_as_of_date: Optional[datetime]
     date_as_of_change: Optional[datetime]
+
+class BSEDocumentMetadata(BaseModel):
+    """
+    Metadata for a document that is a NSE document.
+    """
+
+    company_name: str
+    company_ticker: str
+    doc_type: str = 'Financial Statement'
+    year: str
 
 
 DocumentMetadataMap = Dict[Union[DocumentMetadataKeysEnum, str], Any]

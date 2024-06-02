@@ -1,7 +1,7 @@
 import { backendUrl } from "~/config";
 import type { Message } from "~/types/conversation";
 import type { BackendDocument } from "~/types/backend/document";
-import { SecDocument } from "~/types/document";
+import { BseDocument } from "~/types/document";
 import { fromBackendDocumentToFrontend } from "./utils/documents";
 
 interface CreateConversationPayload {
@@ -16,13 +16,18 @@ interface GetConversationPayload {
 
 interface GetConversationReturnType {
   messages: Message[];
-  documents: SecDocument[];
+  documents: BseDocument[];
 }
 
 class BackendClient {
   private async get(endpoint: string) {
     const url = backendUrl + endpoint;
-    const res = await fetch(url);
+    const res = await fetch(url, {redirect:"follow"});
+    // console.log(res.headers, endpoint);
+    // if (res.redirected) {
+    //   const res_redirect = await fetch(res.headers.get("Location")!, {redirect:"follow"});
+    //   console.log(res_redirect);
+    // }
 
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
@@ -66,10 +71,12 @@ class BackendClient {
     };
   }
 
-  public async fetchDocuments(): Promise<SecDocument[]> {
+  public async fetchDocuments(): Promise<BseDocument[]> {
     const endpoint = `api/document/`;
     const res = await this.get(endpoint);
+    // console.log(res)
     const data = (await res.json()) as BackendDocument[];
+    // console.log(data)
     const docs = fromBackendDocumentToFrontend(data);
     return docs;
   }

@@ -70,8 +70,8 @@ class Settings(PreviewPrefixedSettings):
     LOG_LEVEL: str = "DEBUG"
     IS_PULL_REQUEST: bool = False
     RENDER: bool = False
-    CODESPACES: bool = False
-    CODESPACE_NAME: Optional[str]
+    CODESPACES: bool = True
+    CODESPACE_NAME: Optional[str] = ""
     S3_BUCKET_NAME: str
     S3_ASSET_BUCKET_NAME: str
     CDN_BASE_URL: str
@@ -85,7 +85,10 @@ class Settings(PreviewPrefixedSettings):
     # BACKEND_CORS_ORIGINS is a JSON-formatted list of origins
     # e.g: '["http://localhost", "http://localhost:4200", "http://localhost:3000", \
     # "http://localhost:8080", "http://local.dockertoolbox.tiangolo.com"]'
-    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
+    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
+        "http://localhost:3000", "https://crispy-space-doodle-xp7j65r4jg739vw-3000.app.github.dev/",
+        "http://localhost:8000", "https://crispy-space-doodle-xp7j65r4jg739vw-8000.app.github.dev/"
+    ]
 
     @property
     def VERBOSE(self) -> bool:

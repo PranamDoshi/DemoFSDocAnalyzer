@@ -1,0 +1,87 @@
+{
+    "WIPRO LTD.": [
+        {
+            "company_ticker": "WIPRO",
+            "year": 2023,
+            "pdf_url": "https://www.dropbox.com/scl/fi/jtufq1ndhwi15vowgl8ti/Wipro_FS_2023.pdf?rlkey=xu7ljj86uaku66ciug57iwe8v&st=j48ui4wa&dl=1"
+        },
+        {
+            "company_ticker": "WIPRO",
+            "year": 2022,
+            "pdf_url": "https://www.dropbox.com/scl/fi/k4rnlq23sme1wzy5spba5/Wipro_FS_2022.pdf?rlkey=gxeg422ykmfqfczel1ezom9sn&st=qjgfjnsh&dl=1"
+        },
+        {
+            "company_ticker": "WIPRO",
+            "year": 2021,
+            "pdf_url": "https://www.dropbox.com/scl/fi/1xj54ap2pqhaumgglv1w7/Wipro_FS_2021.pdf?rlkey=dxbht7y063w39otrq4baa8h67&st=qhbfbpxn&dl=1"
+        }
+    ],
+    "TECH MAHINDRA LTD.": [
+        {
+            "company_ticker": "TECHM",
+            "year": 2023,
+            "pdf_url": "https://www.dropbox.com/scl/fi/5155to7wrg7tftnwb3bmj/TechM_FS_2023.pdf?rlkey=mnkvv7bmhrjewcwc174xky25d&st=cncaycpk&dl=1"
+        },
+        {
+            "company_ticker": "TECHM",
+            "year": 2021,
+            "pdf_url": "https://www.dropbox.com/scl/fi/cxgl01l4406q3u4kul8de/TechM_FS_2021.pdf?rlkey=cx2n6lpa4mav5lmvmaw13dm4t&st=vmduwn7h&dl=1"
+        },
+        {
+            "company_ticker": "TECHM",
+            "year": 2020,
+            "pdf_url": "https://www.dropbox.com/scl/fi/sfpesu4bkgmx4d6zhd3mh/TechM_FS_2020.pdf?rlkey=qtya0g6i5u6p8xzyo98h552uy&st=3lw06tet&dl=1"
+        }
+    ],
+    "INFOSYS LTD.": [
+        {
+            "company_ticker": "INFY",
+            "year": 2023,
+            "pdf_url": "https://www.dropbox.com/scl/fi/nxccr678pzhovxkwdu8et/Infosys_FS_2023.pdf?rlkey=mfk5e8suhj8tvjpds7ld0j6n9&st=kz8m3y6n&dl=1"
+        },
+        {
+            "company_ticker": "INFY",
+            "year": 2022,
+            "pdf_url": "https://www.dropbox.com/scl/fi/vt1vatcdzqdj6ol4gn1p0/Infosys_FS_2022.pdf?rlkey=eateqkwsoj1sbo2waggwotsx5&st=6bymkh04&dl=1"
+        },
+        {
+            "company_ticker": "INFY",
+            "year": 2021,
+            "pdf_url": "https://www.dropbox.com/scl/fi/7riwiaz3ts1e90923j6g2/Infosys_FS_2021.pdf?rlkey=hxlv0jqb3ffo2lw31zrz1wti2&st=h89ishbi&dl=1"
+        }
+    ],
+    "TATA CONSULTANCY SERVICES LTD.": [
+        {
+            "company_ticker": "TCS",
+            "year": 2023,
+            "pdf_url": "https://www.dropbox.com/scl/fi/gyz23o3sufvvrrz7epyut/TCS_FS_2023.pdf?rlkey=00d1ygn8xe8aofhiognpwcfzx&st=82mzvaym&dl=1"
+        },
+        {
+            "company_ticker": "TCS",
+            "year": 2022,
+            "pdf_url": "https://www.dropbox.com/scl/fi/lnsbzhmpgfyscqwi73tuu/TCS_FS_2022.pdf?rlkey=g0tf0w3rlafv0a4oe4brp18ya&st=q2fh19lw&dl=1"
+        },
+        {
+            "company_ticker": "TCS",
+            "year": 2021,
+            "pdf_url": "https://www.dropbox.com/scl/fi/f9qldzpxeh2ocdw4b5vtq/TCS_FS_2021.pdf?rlkey=yuwbbarx0fdqiwmoxy2jrm0m7&st=byc9b7g2&dl=1"
+        }
+    ],
+    "HCL TECHNOLOGIES LTD.": [
+        {
+            "company_ticker": "HCLTECH",
+            "year": 2023,
+            "pdf_url": "https://www.dropbox.com/scl/fi/l6hvmdijatgaz10v4ah0y/HCLTech_FS_2023.pdf?rlkey=dbal75dyfc4bs758yl1ovh4vn&st=v1hvs1bj&dl=1"
+        },
+        {
+            "company_ticker": "HCLTECH",
+            "year": 2022,
+            "pdf_url": "https://www.dropbox.com/scl/fi/vcg9wel2ysn6tjix8le8v/HCLTech_FS_2022.pdf?rlkey=pg5s2ne1z6u2f9d3dc20hsk33&st=jw01iydu&dl=1"
+        },
+        {
+            "company_ticker": "HCLTECH",
+            "year": 2021,
+            "pdf_url": "https://www.dropbox.com/scl/fi/y0xu63fub912hbqk057e8/HCLTech_FS_2021.pdf?rlkey=xot4w9x9icy7qj517if9ybxta&st=jc2hoped&dl=1"
+        }
+    ]
+}

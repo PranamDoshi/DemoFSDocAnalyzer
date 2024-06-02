@@ -99,18 +99,30 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 if settings.BACKEND_CORS_ORIGINS:
-    origins = settings.BACKEND_CORS_ORIGINS.copy()
+    # origins = settings.BACKEND_CORS_ORIGINS
+    origins = [
+        "http://localhost:3000/", "https://crispy-space-doodle-xp7j65r4jg739vw-3000.app.github.dev/",
+        "http://localhost:8000/", "https://crispy-space-doodle-xp7j65r4jg739vw-8000.app.github.dev/"
+    ]
     if settings.CODESPACES and settings.CODESPACE_NAME and \
         settings.ENVIRONMENT == AppEnvironment.LOCAL:
         # add codespace origin if running in Github codespace
         origins.append(f"https://{settings.CODESPACE_NAME}-3000.app.github.dev")
     # allow all origins
+    print(f"CORS origins: {origins}")
     app.add_middleware(
         CORSMiddleware,
         allow_origins=origins,
-        allow_origin_regex="https://llama-app-frontend.*\.vercel\.app",
+        # allow_origin_regex="https://crispy-space-doodle.*\.github\.dev",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],

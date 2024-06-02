@@ -1,6 +1,7 @@
 export enum BackendDocumentType {
-  TenK = "10-K",
-  TenQ = "10-Q",
+  // TenK = "10-K",
+  // TenQ = "10-Q",
+  FS = "Financial Statement"
 }
 
 export interface BackendDocument {
@@ -12,13 +13,14 @@ export interface BackendDocument {
 }
 
 export interface BackendMetadataMap {
-  sec_document: BackendSecDocument;
+  // sec_document: BackendBseDocument;
+  bse_document: BackendBseDocument;
 }
 
-export interface BackendSecDocument {
+export interface BackendBseDocument {
   company_name: string;
   company_ticker: string;
   doc_type: BackendDocumentType;
-  year: number;
-  quarter: number;
+  year: string;
+  // quarter: number;
 }
