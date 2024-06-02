@@ -60,6 +60,12 @@ async def delete_conversation(db: AsyncSession, conversation_id: str) -> bool:
     await db.commit()
     return result.rowcount > 0
 
+async def delete_all_conversations(db: AsyncSession) -> bool:
+    stmt = delete(Conversation)
+    result = await db.execute(stmt)
+    await db.commit()
+    return result.rowcount
+
 
 async def fetch_message_with_sub_processes(
     db: AsyncSession, message_id: str
@@ -123,3 +129,15 @@ async def upsert_document_by_url(
     upserted_doc = schema.Document.from_orm(result.scalars().first())
     await db.commit()
     return upserted_doc
+
+async def delete_document(db: AsyncSession, document_id: str)-> bool:
+    stmt = delete(Document).where(Document.id == document_id)
+    result = await db.execute(stmt)
+    await db.commit()
+    return result.rowcount > 0
+
+async def delete_all_documents(db: AsyncSession)-> bool:
+    stmt = delete(Document)
+    result = await db.execute(stmt)
+    await db.commit()
+    return result.rowcount

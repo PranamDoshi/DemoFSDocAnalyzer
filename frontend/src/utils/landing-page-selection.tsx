@@ -5,8 +5,9 @@ import type { SelectOption } from "~/types/selection";
 import { filterByTickerAndType } from "./documents";
 
 export const documentTypeOptions = [
-  { value: DocumentType.TenK, label: DocumentType.TenK },
-  { value: DocumentType.TenQ, label: DocumentType.TenQ },
+  // { value: DocumentType.TenK, label: DocumentType.TenK },
+  // { value: DocumentType.TenQ, label: DocumentType.TenQ },
+  { value: DocumentType.FS, label: DocumentType.FS },
 ] as SelectOption[];
 
 function documentToYearOption(document: BseDocument): SelectOption {

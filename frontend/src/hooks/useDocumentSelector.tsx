@@ -39,7 +39,7 @@ export const useDocumentSelector = () => {
       const docs = await backendClient.fetchDocuments();
       setAvailableDocuments(docs);
     }
-    getDocuments().catch(() => console.error("could not fetch documents"));
+    getDocuments().catch((error) => console.error("could not fetch documents", error));
   }, []);
 
   const [selectedDocuments, setSelectedDocuments] = useLocalStorage<

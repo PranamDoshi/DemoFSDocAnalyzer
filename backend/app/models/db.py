@@ -46,7 +46,7 @@ class Document(Base):
     # URL to the actual document (e.g. a PDF)
     url = Column(String, nullable=False, unique=True)
     metadata_map = Column(JSONB, nullable=True)
-    conversations = relationship("ConversationDocument", back_populates="document")
+    conversations = relationship("ConversationDocument", back_populates="document", cascade='all, delete, delete-orphan')
 
 
 class Conversation(Base):
@@ -54,9 +54,9 @@ class Conversation(Base):
     A conversation with messages and linked documents
     """
 
-    messages = relationship("Message", back_populates="conversation")
+    messages = relationship("Message", back_populates="conversation", cascade='all, delete, delete-orphan')
     conversation_documents = relationship(
-        "ConversationDocument", back_populates="conversation"
+        "ConversationDocument", back_populates="conversation", cascade='all, delete, delete-orphan'
     )
 
 
@@ -85,7 +85,7 @@ class Message(Base):
     role = Column(to_pg_enum(MessageRoleEnum))
     status = Column(to_pg_enum(MessageStatusEnum), default=MessageStatusEnum.PENDING)
     conversation = relationship("Conversation", back_populates="messages")
-    sub_processes = relationship("MessageSubProcess", back_populates="message")
+    sub_processes = relationship("MessageSubProcess", back_populates="message", cascade='all, delete, delete-orphan')
 
 
 class MessageSubProcess(Base):

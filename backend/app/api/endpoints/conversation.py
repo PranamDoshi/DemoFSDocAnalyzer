@@ -52,19 +52,29 @@ async def get_conversation(
     return conversation
 
 
+# @router.delete(
+#     "/{conversation_id}", response_model=None, status_code=status.HTTP_204_NO_CONTENT
+# )
+# async def delete_conversation(
+#     conversation_id: UUID, db: AsyncSession = Depends(get_db)
+# ):
+#     """
+#     Delete a conversation by ID.
+#     """
+#     did_delete = await crud.delete_conversation(db, str(conversation_id))
+#     if not did_delete:
+#         raise HTTPException(status_code=404, detail="Conversation not found")
+#     return
+
 @router.delete(
-    "/{conversation_id}", response_model=None, status_code=status.HTTP_204_NO_CONTENT
+    "/delete_all_conversations"
 )
-async def delete_conversation(
-    conversation_id: UUID, db: AsyncSession = Depends(get_db)
+async def delete_all_conversations_api(
+    db: AsyncSession = Depends(get_db)
 ):
-    """
-    Delete a conversation by ID.
-    """
-    did_delete = await crud.delete_conversation(db, str(conversation_id))
-    if not did_delete:
-        raise HTTPException(status_code=404, detail="Conversation not found")
-    return
+    """ Delete all conversations in DB """
+    deleted_row_count = await crud.delete_all_conversations(db)
+    return deleted_row_count
 
 
 @router.get("/{conversation_id}/message")

@@ -76,7 +76,7 @@ export const TitleAndDropdown = () => {
         <a href="https://www.llamaindex.ai/" target="_blank">
           <button className="flex items-center justify-center font-nunito text-lg font-bold ">
             Built by DeepBox
-            <img src="logo-black.svg" className="mx-2 rounded-lg" width={40} />
+            <img src="logo-black.svg" className="mx-2 rounded-lg" alt="" width={40} />
           </button>
         </a>
       </div>

@@ -46,3 +46,20 @@ async def get_document(
         raise HTTPException(status_code=404, detail="Document not found")
 
     return docs[0]
+
+# @router.delete("/{document_id}")
+# async def delete_document(
+#     document_id: UUID,
+#     db: AsyncSession = Depends(get_db)
+# ) -> None:
+#     """
+#     Delete a document.
+#     """
+#     deleted = await crud.delete_document(db, document_id)
+#     return deleted
+
+@router.delete("/delete_all_documents")
+async def delete_all_documents_api(db: AsyncSession = Depends(get_db))-> None:
+    """ Deletes all documents """
+    deleted_docs_count = await crud.delete_all_documents(db)
+    return deleted_docs_count

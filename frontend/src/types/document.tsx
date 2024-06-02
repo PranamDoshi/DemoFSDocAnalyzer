@@ -26,5 +26,5 @@ export interface BseDocument extends Ticker {
   year: string;
   docType: DocumentType;
   // quarter?: string;
-  // color: DocumentColorEnum;
+  color: DocumentColorEnum;
 }

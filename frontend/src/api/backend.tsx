@@ -74,9 +74,9 @@ class BackendClient {
   public async fetchDocuments(): Promise<BseDocument[]> {
     const endpoint = `api/document/`;
     const res = await this.get(endpoint);
-    // console.log(res)
     const data = (await res.json()) as BackendDocument[];
-    // console.log(data)
+    console.log(data)
+    console.log(data.length)
     const docs = fromBackendDocumentToFrontend(data);
     return docs;
   }
