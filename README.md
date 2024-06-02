@@ -78,3 +78,4 @@ We remain very open to contributions! We're looking forward to seeing the ideas 
 Huge shoutout to [**@Evanc123**](https://github.com/Evanc123) for his fantastic work building the frontend for this project!
 
 To start Chrome in Cors disabled mode!
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C:\Downloads"

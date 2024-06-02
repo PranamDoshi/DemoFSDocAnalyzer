@@ -1,5 +1,5 @@
 {
-  "name": "sec_insights",
+  "name": "fs_insights",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
