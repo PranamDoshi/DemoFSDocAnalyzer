@@ -36,7 +36,7 @@ MessageSubProcessSourceEnum = Enum(
 
 def to_pg_enum(enum_class) -> ENUM:
     return ENUM(enum_class, name=enum_class.__name__)
-
+# , cascade='all, delete, delete-orphan'
 
 class Document(Base):
     """
@@ -46,7 +46,7 @@ class Document(Base):
     # URL to the actual document (e.g. a PDF)
     url = Column(String, nullable=False, unique=True)
     metadata_map = Column(JSONB, nullable=True)
-    conversations = relationship("ConversationDocument", back_populates="document", cascade='all, delete, delete-orphan')
+    conversations = relationship("ConversationDocument", back_populates="document", cascade="all, delete-orphan")
 
 
 class Conversation(Base):
@@ -54,10 +54,8 @@ class Conversation(Base):
     A conversation with messages and linked documents
     """
 
-    messages = relationship("Message", back_populates="conversation", cascade='all, delete, delete-orphan')
-    conversation_documents = relationship(
-        "ConversationDocument", back_populates="conversation", cascade='all, delete, delete-orphan'
-    )
+    messages = relationship("Message", back_populates="conversation", cascade="all, delete-orphan")
+    conversation_documents = relationship("ConversationDocument", back_populates="conversation", cascade="all, delete-orphan")
 
 
 class ConversationDocument(Base):
@@ -85,7 +83,7 @@ class Message(Base):
     role = Column(to_pg_enum(MessageRoleEnum))
     status = Column(to_pg_enum(MessageStatusEnum), default=MessageStatusEnum.PENDING)
     conversation = relationship("Conversation", back_populates="messages")
-    sub_processes = relationship("MessageSubProcess", back_populates="message", cascade='all, delete, delete-orphan')
+    sub_processes = relationship("MessageSubProcess", back_populates="message")
 
 
 class MessageSubProcess(Base):
